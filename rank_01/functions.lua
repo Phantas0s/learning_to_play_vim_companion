@@ -6,6 +6,11 @@ local function restorePosition()
     end
 end
 
+--[[
+1. Save the current cursor position
+2. Delete all the trailing spaces
+3. Come back to the saved cursor position
+]]--
 local function deleteTrailingWS()
     vim.cmd([[
         normal mz
