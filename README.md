@@ -15,8 +15,8 @@ My config for my Mouseless Development Environment. I am using the lightweight a
 
 All my config files are in this repository except:
 
-* My development project configurations
-* My config install settings
+1. My development project configurations
+2. My config install settings
 
 ## WARNING
 
