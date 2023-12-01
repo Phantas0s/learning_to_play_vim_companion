@@ -6,3 +6,6 @@ vim.keymap.set('', '<right>', '<nop>')
 
 -- Can copy-paste more easily from and to Vim
 vim.opt.clipboard:append({'unnamedplus'})
+
+-- Display line numbers
+vim.o.number = true
