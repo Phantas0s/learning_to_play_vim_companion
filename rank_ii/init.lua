@@ -17,3 +17,7 @@ vim.opt.clipboard:append({'unnamedplus'})
 
 -- Display line numbers
 vim.o.number = true
+
+-- Use case insensitive search, except when using uppercases
+vim.o.ignorecase = true
+vim.o.smartcase = true

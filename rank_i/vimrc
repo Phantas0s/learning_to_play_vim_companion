@@ -1,0 +1,34 @@
+""""""""""""
+" MAPPINGS "
+""""""""""""
+
+" Disable the arrow keys (use hjkl instead, respectively)
+nmap <left> <nop>
+nmap <down> <nop>
+nmap <up> <nop>
+nmap <right> <nop>
+
+"""""""""""
+" OPTIONS "
+"""""""""""
+
+" Can copy-paste more easily from and to Vim
+set clipboard+=unnamedplus
+
+" No compatibility with Vi
+set nocompatible
+
+" Display line numbers
+set number
+
+" Enhanced completion in command-line mode
+set wildmenu
+
+" Syntax highlighting
+syntax on
+
+" Enable filetype, indentation, plugin
+filetype plugin indent on
+
+" Always display the status bar
+set laststatus=2
