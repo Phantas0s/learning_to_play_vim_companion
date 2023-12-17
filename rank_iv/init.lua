@@ -55,3 +55,7 @@ vim.o.number = true
 -- Use case insensitive search, except when using uppercases
 vim.o.ignorecase = true
 vim.o.smartcase = true
+
+-- Disable the swap file for all buffers
+-- See :help swap-file
+vim.o.swapfile = false
