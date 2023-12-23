@@ -1,9 +1,10 @@
 --------------
 -- MAPPINGS --
 --------------
--- All these keystrokes are non-recursive by default
+-- All these mappings are non-recursive by default
 
-vim.g.mapleader = " "
+vim.keymap.set('n', ' ', '<nop>')
+vim.g.mapleader = ' '
 
 -- Disable the arrow keys (use hjkl instead, respectively)
 vim.keymap.set('n', '<left>', '<nop>')

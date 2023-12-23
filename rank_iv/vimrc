@@ -18,6 +18,7 @@ call plug#end()
 " MAPPINGS "
 """"""""""""
 
+nmap <space> <nop>
 let mapleader = "\<space>"
 
 " Disable the arrow keys (use hjkl instead, respectively)
