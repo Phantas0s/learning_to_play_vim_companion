@@ -49,7 +49,6 @@ For more detailed information on setting these up, see ["Advanced setup"](#advan
 ---
 
 ### Table of contents
-
 [Quickstart](#quickstart)
 [Supported languages](#supported-languages)
 [Available modules](#available-modules)
