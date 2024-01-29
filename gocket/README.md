@@ -7,11 +7,11 @@
 
 A simple CLI tool (or TUI) for Pocket.
 
-* Read your Pocket goodies from your comfy shell.
-* Archive or delete multiple entries easily.
-* Use a TUI or pipe the pages' URLs (or titles) to any CLI tool you want.
-* Search through your Pocket list.
-* Works on Linux, macOS (not tested), and Windows (not tested).
+Read your Pocket goodies from your comfy shell
+Archive or delete multiple entries easily
+Use a TUI or pipe the URLs to any CLI tool
+Search through your Pocket list
+Works on Linux, macOS (not tested), and Windows (not tested)
 
 ![screenshot of gocket tui](./doc/screenshot.jpg)
 

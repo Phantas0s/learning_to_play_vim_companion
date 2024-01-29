@@ -1,6 +1,5 @@
-[Quickstart](#quickstart)
-[Supported languages](#supported-languages)
-[Available modules](#available-modules)
-[Advanced setup](#advanced-setup)
-[Extra features](#extra-features)
-[Troubleshooting](#troubleshooting)
+Read your Pocket goodies from your comfy shell
+Archive or delete multiple entries easily
+Use a TUI or pipe the URLs to any CLI tool
+Search through your Pocket list
+Works on Linux, macOS (not tested), and Windows (not tested)
