@@ -1,8 +1,8 @@
 // The project is structured as follow:
 
 // main.go (this file) - entry point
-// internal/pocket.go - interface to pocket third party API
-// internal/tui.go - interface to TUI third party library
+// pocket.go - interface to pocket third party API
+// tui.go - interface to TUI third party library
 
 // internal/platform/api.go - pocket API requests
 // internal/platform/auth.go - pocket API Auth
