@@ -16,4 +16,4 @@ vim.keymap.set('n', '<right>', '<nop>')
 vim.opt.clipboard:append({'unnamedplus'})
 
 -- Display line numbers
-vim.o.number = true
+vim.opt.number = true

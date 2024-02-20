@@ -33,5 +33,13 @@ filetype plugin indent on
 " Always display the status bar
 set laststatus=2
 
-" Allow hidding buffers
+" Allow hidden buffers
 set hidden
+
+" Use case insensitive search, except when using uppercases
+set ignorecase
+set smartcase
+
+" Highlight the matches after a search
+set hlsearch
+

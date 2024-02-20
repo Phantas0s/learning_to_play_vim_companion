@@ -1,5 +1,7 @@
 " If you want your cursor to be a block in normal mode
-" and a line in insert mode (but it doesn't work by default),
-" add these two lines to your vimrc.
+" and a line in insert mode, add these two lines to your vimrc:
+
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
+
+" It should be working by default in Neovim.

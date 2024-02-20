@@ -19,6 +19,7 @@ type Website struct {
 	URL   string
 }
 
+// CreatePocket client to use the Pocket API
 func CreatePocket(consumerKey string) *pocket {
 	auth, err := platform.Auth(consumerKey)
 	if err != nil {

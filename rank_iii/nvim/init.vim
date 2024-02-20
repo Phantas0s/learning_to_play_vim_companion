@@ -15,31 +15,9 @@ nmap <right> <nop>
 " Can copy-paste more easily from and to Vim
 set clipboard+=unnamedplus
 
-" No compatibility with Vi
-set nocompatible
-
 " Display line numbers
 set number
-
-" Enhanced completion in command-line mode
-set wildmenu
-
-" Syntax highlighting
-syntax on
-
-" Enable filetype, indentation, plugin
-filetype plugin indent on
-
-" Always display the status bar
-set laststatus=2
-
-" Allow hidding buffers
-set hidden
 
 " Use case insensitive search, except when using uppercases
 set ignorecase
 set smartcase
-
-" Highlight the matches after a search
-set hlsearch
-
