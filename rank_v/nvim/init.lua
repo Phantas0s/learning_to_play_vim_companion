@@ -51,12 +51,12 @@ vim.keymap.set('n', '<f6>', ':source $MYVIMRC<cr>')
 vim.opt.clipboard:append({'unnamedplus'})
 
 -- Display line numbers
-vim.o.number = true
+vim.opt.number = true
 
 -- Use case insensitive search, except when using uppercases
-vim.o.ignorecase = true
-vim.o.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Disable the swap file for all buffers
 -- See :help swap-file
-vim.o.swapfile = false
+vim.opt.swapfile = false

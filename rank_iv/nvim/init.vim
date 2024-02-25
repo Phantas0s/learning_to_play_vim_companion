@@ -20,8 +20,6 @@ nnoremap <leader>nt gt
 
 " Y behave conceptually like D or C
 nnoremap Y y$
-" Delete the current line in insert mode
-inoremap <c-d> <esc>ddi
 " Open the vimrc in a new window
 nnoremap <f5> :vsplit $MYVIMRC<cr>
 " Reload the vimrc directly from Vim

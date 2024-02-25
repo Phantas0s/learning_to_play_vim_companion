@@ -16,8 +16,8 @@ vim.keymap.set('n', '<right>', '<nop>')
 vim.opt.clipboard:append({'unnamedplus'})
 
 -- Display line numbers
-vim.o.number = true
+vim.opt.number = true
 
 -- Use case insensitive search, except when using uppercases
-vim.o.ignorecase = true
-vim.o.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true

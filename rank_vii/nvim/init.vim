@@ -28,18 +28,20 @@ nmap <up> <nop>
 nmap <right> <nop>
 
 " Create a new tab
-nnoremap <leader>t :tabnew<cr>
+nnoremap <leader>t <cmd>tabnew<cr>
 " Move to the next buffer
-nnoremap <leader>nb :bnext<cr>
+nnoremap <leader>nb <cmd>bnext<cr>
 " Move to the next tab
 nnoremap <leader>nt gt
+" Delete the current buffer without closing the current window
+nnoremap <leader>dd <cmd>bprevious <bar> bdelete! #<cr>
 
 " Y behave conceptually like D or C
 nnoremap Y y$
 " Open the vimrc in a new window
-nnoremap <f5> :vsplit $MYVIMRC<cr>
+nnoremap <f5> <cmd>vsplit $MYVIMRC<cr>
 " Reload the vimrc directly from Vim
-nnoremap <f6> :source $MYVIMRC<cr> 
+nnoremap <f6> <cmd>source $MYVIMRC<cr>
 
 """""""""""
 " OPTIONS "
@@ -48,26 +50,8 @@ nnoremap <f6> :source $MYVIMRC<cr>
 " Can copy-paste more easily from and to Vim
 set clipboard+=unnamedplus
 
-" No compatibility with Vi
-set nocompatible
-
 " Display line numbers
 set number
-
-" Enhanced completion in command-line mode
-set wildmenu
-
-" Syntax highlighting
-syntax on
-
-" Enable filetype, indentation, plugin
-filetype plugin indent on
-
-" Always display the status bar
-set laststatus=2
-
-" Allow hidding buffers
-set hidden
 
 " Use case insensitive search, except when using uppercases
 set ignorecase
@@ -76,6 +60,10 @@ set smartcase
 " Highlight the matches after a search
 set hlsearch
 
-" Disable the swap file for all buffers 
+" Disable the swap file for all buffers
 " See :help swap-file
 set noswapfile
+
+" Add directory of the current file "."
+" Add all directories and sub-directories of the global working directory "**"
+set path=.,**

@@ -1,3 +1,20 @@
+-------------
+-- PLUGINS --
+-------------
+
+-- You can install vim-plug by running in your shell:
+--
+-- sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+--       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+--
+--  Ex command to install the plugins listed here:
+-- :PlugUpdate
+
+local Plug = vim.fn['plug#']
+vim.call('plug#begin')
+    Plug 'tpope/vim-surround'
+vim.call('plug#end')
+
 --------------
 -- MAPPINGS --
 --------------
@@ -18,6 +35,8 @@ vim.keymap.set('n', '<leader>t', ':tabnew<cr>')
 vim.keymap.set('n', '<leader>nb', ':bnext<cr>')
 -- Move to the next tab
 vim.keymap.set('n', '<leader>nt', 'gt')
+-- Delete the current buffer without closing the current window
+vim.keymap.set('n', '<leader>dd', '<cmd>bprevious <bar> bdelete! #<cr>')
 
 -- Open the vimrc in a new window
 vim.keymap.set('n', '<f5>', ':vsplit $MYVIMRC<cr>')
