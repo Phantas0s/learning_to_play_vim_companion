@@ -20,6 +20,7 @@ call plug#end()
 
 nmap <space> <nop>
 let mapleader = "\<space>"
+let maplocalleader = "\<space>"
 
 " Disable the arrow keys (use hjkl instead, respectively)
 nmap <left> <nop>

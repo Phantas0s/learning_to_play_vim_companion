@@ -22,6 +22,7 @@ vim.call('plug#end')
 
 vim.keymap.set('n', ' ', '<nop>')
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Disable the arrow keys (use hjkl instead, respectively)
 vim.keymap.set('n', '<left>', '<nop>')

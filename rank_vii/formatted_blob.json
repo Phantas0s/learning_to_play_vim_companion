@@ -2,22 +2,18 @@
   "reports": [
     {
       "columnHeader": {
-        "dimensions": ["ga:month", "ga:day"],
-        "metricHeader": {
-          "metricHeaderEntries": [{ "name": "ga:users", "type": "INTEGER" }]
-        }
-      },
-      "data": {
-        "maximums": [{ "values": ["414"] }],
-        "minimums": [{ "values": ["202"] }],
-        "rowCount": 4,
-        "rows": [
-          { "dimensions": ["02", "05"], "metrics": [{ "values": ["370"] }] },
-          { "dimensions": ["02", "06"], "metrics": [{ "values": ["414"] }] },
-          { "dimensions": ["02", "07"], "metrics": [{ "values": ["387"] }] },
-          { "dimensions": ["02", "08"], "metrics": [{ "values": ["202"] }] }
+        "dimensions": [
+          "ga: month",
+          "ga: day"
         ],
-        "totals": [{ "values": ["1373"] }]
+        "metricHeader": {
+          "metricHeaderEntries": [
+            {
+              "name": "ga: users",
+              "type": "INTEGER"
+            }
+          ]
+        }
       }
     }
   ]
