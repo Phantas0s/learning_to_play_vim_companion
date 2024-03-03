@@ -43,6 +43,12 @@ vim.keymap.set('n', '<f5>', ':vsplit $MYVIMRC<cr>')
 -- Reload the vimrc directly from Vim
 vim.keymap.set('n', '<f6>', ':source $MYVIMRC<cr>')
 
+-- Move from window to window using CTRL-{direction} instead of CTRL-w {direction}
+vim.keymap.set('n', '<c-h>', '<c-w>h')
+vim.keymap.set('n', '<c-j>', '<c-w>j')
+vim.keymap.set('n', '<c-k>', '<c-w>k')
+vim.keymap.set('n', '<c-l>', '<c-w>l')
+
 -------------
 -- OPTIONS --
 -------------

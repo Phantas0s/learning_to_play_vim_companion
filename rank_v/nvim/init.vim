@@ -41,6 +41,12 @@ nnoremap <f5> :vsplit $MYVIMRC<cr>
 " Reload the vimrc directly from Vim
 nnoremap <f6> :source $MYVIMRC<cr>
 
+" Move from window to window using CTRL-{direction} instead of CTRL-w {direction}
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
 """""""""""
 " OPTIONS "
 """""""""""
