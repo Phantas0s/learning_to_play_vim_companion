@@ -72,3 +72,9 @@ vim.opt.swapfile = false
 -- Directory of the current file "."
 -- All directories and sub-directories of the global working directory "**"
 vim.opt.path = { '.', '**', ',' }
+
+vim.o.grepprg = 'grep -n $*'
+-- If ripgrep is installed, use it for :grep and :grepadd
+if vim.fn.executable('rg') == 1 then
+    vim.o.grepprg = 'rg --vimgrep --smart-case $*'
+end

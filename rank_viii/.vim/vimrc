@@ -42,7 +42,7 @@ nnoremap Y y$
 " Open the vimrc in a new window
 nnoremap <f5> <cmd>vsplit $MYVIMRC<cr>
 " Reload the vimrc directly from Vim
-nnoremap <f6> <cmd>source $MYVIMRC<cr>
+nnoremap <f6> <cmd>source $MYVIMRC<cr> 
 
 " Move from window to window using CTRL-{direction} instead of CTRL-w {direction}
 nnoremap <c-h> <c-w>h
@@ -57,8 +57,26 @@ nnoremap <c-l> <c-w>l
 " Can copy-paste more easily from and to Vim
 set clipboard+=unnamedplus
 
+" No compatibility with Vi
+set nocompatible
+
 " Display line numbers
 set number
+
+" Enhanced completion in command-line mode
+set wildmenu
+
+" Syntax highlighting
+syntax on
+
+" Enable filetype, indentation, plugin
+filetype plugin indent on
+
+" Always display the status bar
+set laststatus=2
+
+" Allow hidding buffers
+set hidden
 
 " Use case insensitive search, except when using uppercases
 set ignorecase
@@ -67,10 +85,16 @@ set smartcase
 " Highlight the matches after a search
 set hlsearch
 
-" Disable the swap file for all buffers
+" Disable the swap file for all buffers 
 " See :help swap-file
 set noswapfile
 
 " Add directory of the current file "."
 " Add all directories and sub-directories of the global working directory "**"
 set path=.,**,,
+
+let &grepprg='grep -n $*'
+" If ripgrep is installed, use it for :grep and :grepadd
+if executable('rg')
+    let &grepprg='rg --vimgrep --smart-case $*'
+endif

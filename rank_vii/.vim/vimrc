@@ -91,4 +91,4 @@ set noswapfile
 
 " Add directory of the current file "."
 " Add all directories and sub-directories of the global working directory "**"
-set path=.,**
+set path=.,**,,

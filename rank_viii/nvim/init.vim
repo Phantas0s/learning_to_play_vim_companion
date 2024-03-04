@@ -74,3 +74,9 @@ set noswapfile
 " Add directory of the current file "."
 " Add all directories and sub-directories of the global working directory "**"
 set path=.,**,,
+
+let &grepprg='grep -n $*'
+" If ripgrep is installed, use it for :grep and :grepadd
+if executable('rg')
+    let &grepprg='rg --vimgrep --smart-case $*'
+endif
