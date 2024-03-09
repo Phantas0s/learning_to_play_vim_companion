@@ -19,9 +19,9 @@
 
 ### Added
 
-* `gocket list` and `gocket list archive` - New option `-f` to filter by type 'article' (default), 'video' or image
-* `gocket add` - Read from stdin when no arguments given
-* Possible to configure gocket using environment variables (need prefix `GOCKET_`, i.e `GOCKET_TUI=true`)
+* commands `gocket list` and `gocket list archive`
+* command `gocket add` - Read from stdin when no arguments given
+* possible to configure gocket using environment variables
 
 ## [0.1.0] - 2021-03-07
 
