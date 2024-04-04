@@ -24,6 +24,10 @@ vim.keymap.set('n', ' ', '<nop>')
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Use an external function defined in `lua/functions.lua`
+-- Replace indentations using tabs with spaces
+vim.keymap.set('n', '<leader>ds', require('functions').customDeleteTrailingWS)
+
 -- Disable the arrow keys (use hjkl instead, respectively)
 vim.keymap.set('n', '<left>', '<nop>')
 vim.keymap.set('n', '<down>', '<nop>')
@@ -78,3 +82,4 @@ vim.o.grepprg = 'grep -n $*'
 if vim.fn.executable('rg') == 1 then
     vim.o.grepprg = 'rg --vimgrep --smart-case $*'
 end
+

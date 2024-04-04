@@ -14,6 +14,13 @@ call plug#begin()
     Plug 'tpope/vim-surround'
 call plug#end()
 
+"""""""""""""
+" FUNCTIONS "
+"""""""""""""
+
+" All the functions are written in Lua in another file.
+source $HOME/.config/nvim/lua/functions.lua
+
 """"""""""""
 " MAPPINGS "
 """"""""""""
