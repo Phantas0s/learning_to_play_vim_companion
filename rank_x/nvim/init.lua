@@ -21,6 +21,17 @@ vim.call('plug#end')
 
 local customFunc = require("functions")
 
+------------------
+-- AUTOCOMMANDS --
+------------------
+
+local vimrc = vim.api.nvim_create_augroup('vimrc', { clear = true })
+vim.api.nvim_create_autocmd({ 'BufWrite' }, {
+    group = vimrc,
+    pattern = '*',
+    callback = customFunc.customDeleteTrailingWS
+})
+
 --------------
 -- MAPPINGS --
 --------------
