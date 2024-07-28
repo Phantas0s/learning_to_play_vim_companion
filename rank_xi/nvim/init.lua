@@ -21,14 +21,7 @@ vim.call('plug#end')
 
 local customFunc = require("functions")
 
-local function RemoveDirectory(opts)
-    local choice = vim.fn.confirm("Remove directory '"..opts.args.."'?", "Yes\nNo")
-    if choice == 1 then
-        vim.fn.delete(opts.args,"rf")
-    end
-end
-
-vim.api.nvim_create_user_command("Rmdir", RemoveDirectory, { nargs = 1 })
+vim.api.nvim_create_user_command("Rmdir", customFunc.removeDirectory, { nargs = 1 })
 
 ------------------
 -- AUTOCOMMANDS --

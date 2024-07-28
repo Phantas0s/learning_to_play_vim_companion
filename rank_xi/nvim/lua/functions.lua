@@ -6,6 +6,15 @@ local function deleteTrailingWS()
     ]])
 end
 
+local function removeDirectory(opts)
+    local choice = vim.fn.confirm("Remove directory '"..opts.args.."'?", "Yes\nNo")
+    if choice == 1 then
+        vim.fn.delete(opts.args,"rf")
+    end
+end
+
+
 return {
-    customDeleteTrailingWS = deleteTrailingWS
+    customDeleteTrailingWS = deleteTrailingWS,
+    removeDirectory = removeDirectory,
 }
