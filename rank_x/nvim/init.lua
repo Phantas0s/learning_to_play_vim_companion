@@ -1,7 +1,6 @@
 -------------
 -- PLUGINS --
 -------------
-
 -- You can install vim-plug by running in your shell:
 --
 -- sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -25,7 +24,10 @@ local customFunc = require("functions")
 -- AUTOCOMMANDS --
 ------------------
 
+-- Autocommand group deleting all its autocommands each time this file is sourced
 local vimrc = vim.api.nvim_create_augroup('vimrc', { clear = true })
+
+-- Delete all trailing whitespaces before writing any buffer
 vim.api.nvim_create_autocmd({ 'BufWrite' }, {
     group = vimrc,
     pattern = '*',

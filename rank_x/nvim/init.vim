@@ -25,11 +25,13 @@ source $HOME/.config/nvim/lua/functions.lua
 " AUTOCOMMANDS "
 """"""""""""""""
 
+" Autocommand group deleting all its autocommands each time this file is sourced
 augroup vimrc
     autocmd!
 augroup END
 
-autocmd vimrc BufWrite *.json call DeleteTrailingWS()
+" Delete all trailing whitespaces before writing any buffer
+autocmd vimrc BufWritePre * call DeleteTrailingWS()
 
 """"""""""""
 " MAPPINGS "
