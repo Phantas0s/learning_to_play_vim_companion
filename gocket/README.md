@@ -44,9 +44,9 @@ You need to authorize gocket to access your Pocket account. It's very easy:
 1. Go to [Gocket apps and create an application](https://getpocket.com/developer/apps/)
 2. Authorize the application to **add**, **modify**, and **retrieve** if you want to use the full set of gocket's feature
 3. You need to pass the consumer key to gocket each time you use it (`-k` option) or you can use a config file:
-    1. Create the file `$XDG_CONFIG_HOME/gocket/config.yml`
-    2. Create an entry with `key` as index and the consumer key as value, for example `key: 1234-5a6b7c`
-    3. Your config can be a YAML, TOML, or JSON file
+   1. Create the file `$XDG_CONFIG_HOME/gocket/config.yml`
+   2. Create an entry with `key` as index and the consumer key as value, for example `key: 1234-5a6b7c`
+   3. Your config can be a YAML, TOML, or JSON file
 3. The first time you use pocket, you'll need to confirm your authorization. A webpage will open automatically in your favorite browser to do so
 4. Enjoy!
 
@@ -71,8 +71,8 @@ Use the option `-h` for each command to output the help.
 
 The options for these two commands are almost identical. Here are the difference:
 
-* Use `-a` with `gocket list` to bulk add every listed entry to the archive (with confirmation).
-* Use `-a` with `gocket list archive` to bulk add every listed archive to the unread list (with confirmation).
+a. Use `-a` with `gocket list` to bulk add every listed entry to the archive (with confirmation).
+b. Use `-a` with `gocket list archive` to bulk add every listed archive to the unread list (with confirmation).
 
 ### Adding New Pages
 
