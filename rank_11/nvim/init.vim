@@ -67,6 +67,10 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
+" Toggle relative line numbers
+nnoremap <c-n> <cmd>set relativenumber!<cr>
+inoremap <c-n> <cmd>set relativenumber!<cr>
+
 """""""""""
 " OPTIONS "
 """""""""""
@@ -74,7 +78,7 @@ nnoremap <c-l> <c-w>l
 " Can copy-paste more easily from and to Vim
 set clipboard+=unnamedplus
 
-" Display line numbers
+" Display absolute line numbers
 set number
 
 " Use case insensitive search, except when using uppercases

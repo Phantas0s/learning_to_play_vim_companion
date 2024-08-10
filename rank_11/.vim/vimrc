@@ -74,6 +74,10 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
+" Toggle relative line numbers
+nnoremap <c-n> <cmd>set relativenumber!<cr>
+inoremap <c-n> <cmd>set relativenumber!<cr>
+
 """""""""""
 " OPTIONS "
 """""""""""
@@ -84,7 +88,7 @@ set clipboard+=unnamedplus
 " No compatibility with Vi
 set nocompatible
 
-" Display line numbers
+" Display absolute line numbers
 set number
 
 " Enhanced completion in command-line mode

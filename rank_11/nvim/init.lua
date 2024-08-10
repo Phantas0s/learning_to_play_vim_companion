@@ -72,6 +72,10 @@ vim.keymap.set('n', '<c-j>', '<c-w>j')
 vim.keymap.set('n', '<c-k>', '<c-w>k')
 vim.keymap.set('n', '<c-l>', '<c-w>l')
 
+-- Toggle relative line numbers
+vim.keymap.set('n', '<c-n>', '<cmd>set relativenumber!<cr>')
+vim.keymap.set('i', '<c-n>', '<cmd>set relativenumber!<cr>')
+
 -------------
 -- OPTIONS --
 -------------
@@ -79,7 +83,7 @@ vim.keymap.set('n', '<c-l>', '<c-w>l')
 -- Can copy-paste more easily from and to Vim
 vim.opt.clipboard:append({'unnamedplus'})
 
--- Display line numbers
+-- Display absolute line numbers
 vim.opt.number = true
 
 -- Use case insensitive search, except when using uppercases
