@@ -31,7 +31,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Replace indentations using tabs with spaces
-vim.keymap.set('n', '<leader>ds', customFunc.customDeleteTrailingWS)
+vim.keymap.set('n', '<leader>ds', customFunc.DeleteTrailingWS)
 
 -- Disable the arrow keys (use hjkl instead, respectively)
 vim.keymap.set('n', '<left>', '<nop>')

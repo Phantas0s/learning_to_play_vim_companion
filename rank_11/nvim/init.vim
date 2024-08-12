@@ -19,7 +19,18 @@ call plug#end()
 """""""""""""
 
 " All the functions are written in Lua in another file.
-source $HOME/.config/nvim/lua/functions.lua
+let customFunc = luaeval('require("functions")')
+
+"""""""""""""""""
+" USER COMMANDS "
+"""""""""""""""""
+
+command -nargs=+ -complete=dir Mkdir !mkdir -p <args>
+
+" The Lua function expect a table with key "fargs"
+" which has itself a table as value with each argument.
+" See :help lua-guide-commands-create
+command -nargs=+ -complete=dir Rmdir call customFunc.RemoveDirectories({'fargs': split(<q-args>)})
 
 """"""""""""""""
 " AUTOCOMMANDS "
@@ -29,7 +40,7 @@ augroup vimrc
     autocmd!
 augroup END
 
-autocmd vimrc BufWrite *.json call DeleteTrailingWS()
+autocmd vimrc BufWrite * call customFunc.DeleteTrailingWS()
 
 """"""""""""
 " MAPPINGS "

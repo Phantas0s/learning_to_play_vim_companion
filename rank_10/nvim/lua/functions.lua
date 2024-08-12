@@ -7,5 +7,5 @@ local function deleteTrailingWS()
 end
 
 return {
-    customDeleteTrailingWS = deleteTrailingWS
+    DeleteTrailingWS = deleteTrailingWS
 }

@@ -19,7 +19,7 @@ call plug#end()
 """""""""""""
 
 " All the functions are written in Lua in another file.
-source $HOME/.config/nvim/lua/functions.lua
+let customFunc = luaeval('require("functions")')
 
 """"""""""""
 " MAPPINGS "
@@ -28,6 +28,9 @@ source $HOME/.config/nvim/lua/functions.lua
 nmap <space> <nop>
 let mapleader = "\<space>"
 let maplocalleader = "\<space>"
+
+" Replace indentations using tabs with spaces
+nnoremap <leader>ds <cmd>call customFunc.DeleteTrailingWS()<cr>
 
 " Disable the arrow keys (use hjkl instead, respectively)
 nmap <left> <nop>

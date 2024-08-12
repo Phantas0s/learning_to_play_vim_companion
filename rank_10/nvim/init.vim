@@ -19,7 +19,7 @@ call plug#end()
 """""""""""""
 
 " All the functions are written in Lua in another file.
-source $HOME/.config/nvim/lua/functions.lua
+let customFunc = luaeval('require("functions")')
 
 """"""""""""""""
 " AUTOCOMMANDS "
@@ -31,7 +31,7 @@ augroup vimrc
 augroup END
 
 " Delete all trailing whitespaces before writing any buffer
-autocmd vimrc BufWritePre * call DeleteTrailingWS()
+autocmd vimrc BufWritePre * call customFunc.DeleteTrailingWS()
 
 """"""""""""
 " MAPPINGS "

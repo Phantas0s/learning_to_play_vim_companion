@@ -4,10 +4,11 @@ function DeleteTrailingWS() abort
     normal `z
 endfunc
 
-function RemoveDirectory(dir)
-    let choice = confirm("Remove directory '"..a:dir.."'?", "Yes\nNo")
-    if choice == 1
-        call delete(a:dir,"rf")
-    endif
+function RemoveDirectories(...)
+    for arg in a:000
+        let choice = confirm("Remove directory '" .. arg .. "'?", "Yes\nNo")
+        if choice == 1
+            call delete(arg, "rf")
+        endif
+    endfor
 endfunction
-

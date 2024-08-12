@@ -21,7 +21,17 @@ vim.call('plug#end')
 
 local customFunc = require("functions")
 
-vim.api.nvim_create_user_command("Rmdir", customFunc.removeDirectory, { nargs = 1 })
+-------------------
+-- USER COMMANDS --
+-------------------
+
+vim.api.nvim_create_user_command('Mkdir', '!mkdir -p <args>', { nargs = '+' })
+
+vim.api.nvim_create_user_command(
+    "Rmdir",
+    customFunc.RemoveDirectories,
+    { nargs = "+", complete = "dir" }
+)
 
 ------------------
 -- AUTOCOMMANDS --
@@ -31,7 +41,7 @@ local vimrc = vim.api.nvim_create_augroup('vimrc', { clear = true })
 vim.api.nvim_create_autocmd({ 'BufWrite' }, {
     group = vimrc,
     pattern = '*',
-    callback = customFunc.customDeleteTrailingWS
+    callback = customFunc.DeleteTrailingWS
 })
 
 --------------
@@ -42,9 +52,6 @@ vim.api.nvim_create_autocmd({ 'BufWrite' }, {
 vim.keymap.set('n', ' ', '<nop>')
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
--- Replace indentations using tabs with spaces
-vim.keymap.set('n', '<leader>ds', customFunc.customDeleteTrailingWS)
 
 -- Disable the arrow keys (use hjkl instead, respectively)
 vim.keymap.set('n', '<left>', '<nop>')
