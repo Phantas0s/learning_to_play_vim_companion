@@ -68,7 +68,7 @@ nnoremap Y y$
 " Open the vimrc in a new window
 nnoremap <f5> <cmd>vsplit $MYVIMRC<cr>
 " Reload the vimrc directly from Vim
-nnoremap <f6> <cmd>source $MYVIMRC<cr> 
+nnoremap <f6> <cmd>source $MYVIMRC<cr>
 
 " Move from window to window using CTRL-{direction} instead of CTRL-w {direction}
 nnoremap <c-h> <c-w>h
@@ -115,7 +115,7 @@ set smartcase
 " Highlight the matches after a search
 set hlsearch
 
-" Disable the swap file for all buffers 
+" Disable the swap file for all buffers
 " See :help swap-file
 set noswapfile
 
