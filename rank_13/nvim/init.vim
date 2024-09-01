@@ -18,27 +18,29 @@ call plug#end()
 " FUNCTIONS "
 """""""""""""
 
-" All the functions are in another files.
-source $HOME/.vim/functions.vim
+" All the functions are written in Lua in another file.
+let customFunc = luaeval('require("functions")')
 
 """""""""""""""""
 " USER COMMANDS "
 """""""""""""""""
 
-command -nargs=+ Mkdir !mkdir -p <args>
+command -nargs=+ -complete=dir Mkdir !mkdir -p <args>
 
-command -nargs=+ -complete=dir Rmdir call RemoveDirectories(<f-args>)
+" The Lua function expect a table with key "fargs"
+" which has itself a table as value with each argument.
+" See :help lua-guide-commands-create
+command -nargs=+ -complete=dir Rmdir call customFunc.RemoveDirectories({'fargs': split(<q-args>)})
 
 """"""""""""""""
 " AUTOCOMMANDS "
 """"""""""""""""
 
-" Autocommand group deleting all its autocommands each time this file is sourced.
 augroup vimrc
     autocmd!
 augroup END
 
-autocmd vimrc BufWrite * call DeleteTrailingWS()
+autocmd vimrc BufWrite * call customFunc.DeleteTrailingWS()
 
 """"""""""""
 " MAPPINGS "
@@ -87,26 +89,8 @@ inoremap <c-n> <cmd>set relativenumber!<cr>
 " Can copy-paste more easily from and to Vim
 set clipboard+=unnamedplus
 
-" No compatibility with Vi
-set nocompatible
-
 " Display absolute line numbers
 set number
-
-" Enhanced completion in command-line mode
-set wildmenu
-
-" Syntax highlighting
-syntax on
-
-" Enable filetype, indentation, plugin
-filetype plugin indent on
-
-" Always display the status bar
-set laststatus=2
-
-" Allow hidding buffers
-set hidden
 
 " Use case insensitive search, except when using uppercases
 set ignorecase
