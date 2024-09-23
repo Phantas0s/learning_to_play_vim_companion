@@ -1,6 +1,7 @@
 """""""""""
 " PLUGINS "
 """""""""""
+" {{{
 
 " You can install vim-plug by running in your shell:
 "
@@ -14,9 +15,12 @@ call plug#begin()
     Plug 'tpope/vim-surround'
 call plug#end()
 
+" }}}
+
 """""""""""""
 " FUNCTIONS "
 """""""""""""
+" {{{
 
 " All the functions are in another files.
 source $HOME/.vim/functions.vim
@@ -29,9 +33,12 @@ command -nargs=+ Mkdir !mkdir -p <args>
 
 command -nargs=+ -complete=dir Rmdir call RemoveDirectories(<f-args>)
 
+" }}}
+
 """"""""""""""""
 " AUTOCOMMANDS "
 """"""""""""""""
+" {{{
 
 " Autocommand group deleting all its autocommands each time this file is sourced.
 augroup vimrc
@@ -40,9 +47,14 @@ augroup END
 
 autocmd vimrc BufWrite * call DeleteTrailingWS()
 
+autocmd vimrc BufEnter $MYVIMRC setlocal foldmethod=marker
+
+" }}}
+
 """"""""""""
 " MAPPINGS "
 """"""""""""
+" {{{
 
 nmap <space> <nop>
 let mapleader = "\<space>"
@@ -80,9 +92,12 @@ nnoremap <c-l> <c-w>l
 nnoremap <c-n> <cmd>set relativenumber!<cr>
 inoremap <c-n> <cmd>set relativenumber!<cr>
 
+" }}}
+
 """""""""""
 " OPTIONS "
 """""""""""
+" {{{
 
 " Can copy-paste more easily from and to Vim
 set clipboard+=unnamedplus
@@ -132,3 +147,5 @@ endif
 " Save undo trees in files
 set undofile
 set undolevels=10000 " Maximum number of changes that can be undone (default 1000)
+
+" }}}

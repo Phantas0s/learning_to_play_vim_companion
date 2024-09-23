@@ -1,6 +1,7 @@
 -------------
 -- PLUGINS --
 -------------
+-- {{{
 
 -- You can install vim-plug by running in your shell:
 --
@@ -15,15 +16,21 @@ vim.call('plug#begin')
     Plug 'tpope/vim-surround'
 vim.call('plug#end')
 
+-- }}}
+
 ---------------
 -- FUNCTIONS --
 ---------------
+-- {{{
 
 local customFunc = require("functions")
+
+-- }}}
 
 -------------------
 -- USER COMMANDS --
 -------------------
+-- {{{
 
 vim.api.nvim_create_user_command('Mkdir', '!mkdir -p <args>', { nargs = '+' })
 
@@ -33,9 +40,12 @@ vim.api.nvim_create_user_command(
     { nargs = "+", complete = "dir" }
 )
 
+-- }}}
+
 ------------------
 -- AUTOCOMMANDS --
 ------------------
+-- {{{
 
 local vimrc = vim.api.nvim_create_augroup('vimrc', { clear = true })
 vim.api.nvim_create_autocmd({ 'BufWrite' }, {
@@ -44,9 +54,18 @@ vim.api.nvim_create_autocmd({ 'BufWrite' }, {
     callback = customFunc.DeleteTrailingWS
 })
 
+vim.api.nvim_create_autocmd({ 'BufEnter' }, {
+    group = vimrc,
+    pattern = vim.env.MYVIMRC,
+    callback = function() vim.opt_local.foldmethod = 'marker' end
+})
+
+-- }}}
+
 --------------
 -- MAPPINGS --
 --------------
+-- {{{
 -- All these mappings are non-recursive by default
 
 vim.keymap.set('n', ' ', '<nop>')
@@ -83,9 +102,12 @@ vim.keymap.set('n', '<c-l>', '<c-w>l')
 vim.keymap.set('n', '<c-n>', '<cmd>set relativenumber!<cr>')
 vim.keymap.set('i', '<c-n>', '<cmd>set relativenumber!<cr>')
 
+-- }}}
+
 -------------
 -- OPTIONS --
 -------------
+-- {{{
 
 -- Can copy-paste more easily from and to Vim
 vim.opt.clipboard:append({'unnamedplus'})
@@ -115,3 +137,5 @@ end
 -- Save undo trees in files
 vim.opt.undofile = true
 vim.opt.undolevels = 10000 -- Maximum number of changes that can be undone (default 1000)
+
+-- }}}

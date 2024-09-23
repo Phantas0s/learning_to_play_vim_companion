@@ -82,6 +82,14 @@ nnoremap <c-l> <c-w>l
 nnoremap <c-n> <cmd>set relativenumber!<cr>
 inoremap <c-n> <cmd>set relativenumber!<cr>
 
+" Define a text-object for square brackets
+onoremap ir i[
+onoremap ar a[
+
+" Define a text objects for slashes
+onoremap i/ :<c-u>normal! T/vt/<cr>
+xnoremap i/ :<c-u>normal! T/vt/<cr>
+
 """""""""""
 " OPTIONS "
 """""""""""

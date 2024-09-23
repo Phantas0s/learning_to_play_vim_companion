@@ -7,8 +7,8 @@ local function deleteTrailingWS()
 end
 
 local function removeDirectories(table)
-    for i, arg in ipairs(table.fargs) do
-        local choice = vim.fn.confirm("Remove directory '" .. arg .. "'?", "Yes\nNo")
+    for _, arg in ipairs(table.fargs) do
+        local choice = vim.fn.confirm("Remove directory '" .. arg .. "'?", "&Yes\n&No")
         if choice == 1 then
             vim.fn.delete(arg, 'rf')
         end

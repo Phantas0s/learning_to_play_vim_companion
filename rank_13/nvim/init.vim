@@ -1,6 +1,7 @@
 """""""""""
 " PLUGINS "
 """""""""""
+" {{{
 
 " You can install vim-plug by running in your shell:
 "
@@ -14,16 +15,22 @@ call plug#begin()
     Plug 'tpope/vim-surround'
 call plug#end()
 
+" }}}
+
 """""""""""""
 " FUNCTIONS "
 """""""""""""
+" {{{
 
 " All the functions are written in Lua in another file.
 let customFunc = luaeval('require("functions")')
 
+" }}}
+
 """""""""""""""""
 " USER COMMANDS "
 """""""""""""""""
+" {{{
 
 command -nargs=+ -complete=dir Mkdir !mkdir -p <args>
 
@@ -32,9 +39,12 @@ command -nargs=+ -complete=dir Mkdir !mkdir -p <args>
 " See :help lua-guide-commands-create
 command -nargs=+ -complete=dir Rmdir call customFunc.RemoveDirectories({'fargs': split(<q-args>)})
 
+" }}}
+
 """"""""""""""""
 " AUTOCOMMANDS "
 """"""""""""""""
+" {{{
 
 augroup vimrc
     autocmd!
@@ -42,9 +52,14 @@ augroup END
 
 autocmd vimrc BufWrite * call customFunc.DeleteTrailingWS()
 
+autocmd vimrc BufEnter $MYVIMRC setlocal foldmethod=marker
+
+" }}}
+
 """"""""""""
 " MAPPINGS "
 """"""""""""
+" {{{
 
 nmap <space> <nop>
 let mapleader = "\<space>"
@@ -82,9 +97,12 @@ nnoremap <c-l> <c-w>l
 nnoremap <c-n> <cmd>set relativenumber!<cr>
 inoremap <c-n> <cmd>set relativenumber!<cr>
 
+" }}}
+
 """""""""""
 " OPTIONS "
 """""""""""
+" {{{
 
 " Can copy-paste more easily from and to Vim
 set clipboard+=unnamedplus
@@ -116,3 +134,5 @@ endif
 " Save undo trees in files
 set undofile
 set undolevels=10000 " Maximum number of changes that can be undone (default 1000)
+
+" }}}

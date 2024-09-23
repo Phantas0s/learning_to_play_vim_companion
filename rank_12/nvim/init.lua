@@ -83,6 +83,14 @@ vim.keymap.set('n', '<c-l>', '<c-w>l')
 vim.keymap.set('n', '<c-n>', '<cmd>set relativenumber!<cr>')
 vim.keymap.set('i', '<c-n>', '<cmd>set relativenumber!<cr>')
 
+-- Define a text-object for square brackets
+vim.keymap.set('o', 'ir', 'i[')
+vim.keymap.set('o', 'ar', 'a[')
+
+-- Define a text object for slashes
+vim.keymap.set('o', 'i/', ':<c-u>normal! T/vt/<cr>')
+vim.keymap.set('x', 'i/', ':<c-u>normal! T/vt/<cr>')
+
 -------------
 -- OPTIONS --
 -------------
