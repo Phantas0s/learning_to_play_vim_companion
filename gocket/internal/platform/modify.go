@@ -28,7 +28,6 @@ type modifyRequest struct {
 }
 
 type ModifyResult struct {
-	// The results for each of the requested actions.
 	ActionResults []string
 	Status        int
 }
