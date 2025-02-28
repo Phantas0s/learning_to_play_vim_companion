@@ -1,0 +1,10 @@
+[Unit]
+Description=Example of a systemd service
+
+[Service]
+Type=simple
+ExecStart=/opt/control-center/resources/dist/control-center/data/service/deamon --start
+ExecStop=/opt/control-center/resources/dist/control-center/data/service/daemon --stop
+
+[Install]
+WantedBy=multi-user.target
