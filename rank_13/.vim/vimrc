@@ -25,9 +25,13 @@ call plug#end()
 " All the functions are in another files.
 source $HOME/.vim/functions.vim
 
+" }}}
+
 """""""""""""""""
 " USER COMMANDS "
 """""""""""""""""
+
+" {{{
 
 command -nargs=+ Mkdir !mkdir -p <args>
 

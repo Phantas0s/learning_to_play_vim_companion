@@ -99,6 +99,19 @@ inoremap <c-n> <cmd>set relativenumber!<cr>
 
 " }}}
 
+"""""""""""""""
+" STATUS LINE "
+"""""""""""""""
+" {{{
+
+let &statusline='%r'                               "Read Only flag
+let &statusline.=' %t'                             "Filename
+let &statusline.=' %m'                             "Modified Flag
+let &statusline.=' Buf %n'                         "Buffer Number
+let &statusline.=' %{customFunc.WordCount()}'      "Word count
+
+" }}}
+
 """""""""""
 " OPTIONS "
 """""""""""

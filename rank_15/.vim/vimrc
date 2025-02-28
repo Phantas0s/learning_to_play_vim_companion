@@ -17,21 +17,16 @@ call plug#end()
 
 " }}}
 
-"""""""""""""
-" FUNCTIONS "
-"""""""""""""
-" {{{
-
-" All the functions are in another files.
-source $HOME/.vim/functions.vim
-
 """""""""""""""""
 " USER COMMANDS "
 """""""""""""""""
+" {{{
 
 command -nargs=+ Mkdir !mkdir -p <args>
 
-command -nargs=+ -complete=dir Rmdir call RemoveDirectories(<f-args>)
+command -nargs=+ -complete=dir Rmdir call general#RemoveDirectories(<f-args>)
+
+command Syn call general#Syn()
 
 " }}}
 
@@ -45,7 +40,7 @@ augroup vimrc
     autocmd!
 augroup END
 
-autocmd vimrc BufWrite * call DeleteTrailingWS()
+autocmd vimrc BufWrite * call general#DeleteTrailingWS()
 
 autocmd vimrc BufEnter $MYVIMRC setlocal foldmethod=marker
 
@@ -91,6 +86,27 @@ nnoremap <c-l> <c-w>l
 " Toggle relative line numbers
 nnoremap <c-n> <cmd>set relativenumber!<cr>
 inoremap <c-n> <cmd>set relativenumber!<cr>
+
+" }}}
+
+"""""""""""""""
+" STATUS LINE "
+"""""""""""""""
+" {{{
+
+let &statusline='%r'                               "Read Only flag
+let &statusline.=' %t'                             "Filename
+let &statusline.=' %m'                             "Modified Flag
+let &statusline.=' Buf %n'                         "Buffer Number
+let &statusline.=' %{general#WordCount()}'         "Word count
+
+set tabline=%!general#TabLine()
+
+" We assume we use a 256 colors terminal here
+highlight TabLineSel ctermfg=white ctermbg=black cterm=bold
+highlight TabLineNum ctermfg=gray ctermbg=black cterm=none
+highlight TabLineNumSel ctermfg=red ctermbg=black cterm=bold
+highlight TabLine ctermfg=gray ctermbg=black cterm=none
 
 " }}}
 

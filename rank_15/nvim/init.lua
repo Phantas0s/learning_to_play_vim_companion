@@ -104,6 +104,25 @@ vim.keymap.set('i', '<c-n>', '<cmd>set relativenumber!<cr>')
 
 -- }}}
 
+-----------------
+-- STATUS LINE --
+-----------------
+-- {{{
+
+vim.api.nvim_create_autocmd({ 'BufEnter' }, {
+    callback = function()
+        vim.o.statusline = table.concat {
+            '%r',
+            ' %t',
+            ' %m',
+            ' Buf %n',
+            customFunc.WordCount(),
+        }
+    end
+})
+
+-- }}}
+
 -------------
 -- OPTIONS --
 -------------

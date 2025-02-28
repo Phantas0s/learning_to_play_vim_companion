@@ -15,7 +15,16 @@ local function removeDirectories(table)
     end
 end
 
+local function wordCount()
+    if vim.api.nvim_get_option_value('filetype', { scope = "local" }) ~= "markdown" then
+        return ""
+    end
+
+    return " " .. vim.fn.wordcount().words .. " words"
+end
+
 return {
     DeleteTrailingWS = deleteTrailingWS,
     RemoveDirectories = removeDirectories,
+    WordCount = wordCount,
 }
