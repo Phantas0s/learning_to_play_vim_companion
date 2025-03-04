@@ -23,8 +23,39 @@ local function wordCount()
     return " " .. vim.fn.wordcount().words .. " words"
 end
 
+local function tabLine()
+    vim.cmd([[
+        highlight TabLineNum ctermfg=gray ctermbg=black cterm=none
+        highlight TabLineNumSel ctermfg=red ctermbg=black cterm=bold
+    ]])
+
+    local line = ''
+    for i = 1,vim.fn.tabpagenr('$') do
+        if i == vim.fn.tabpagenr() then
+            line = line .. '%#TabLineNumSel#'
+        else
+            line = line .. '%#TabLineNum#'
+        end
+        line = line .. ' ' .. i .. ':'
+
+        local buffers = vim.fn.tabpagebuflist(i)
+        local list = vim.split(vim.api.nvim_buf_get_name(buffers[1]), '/')
+        line = line .. list[#list]
+
+        for idx,_ in ipairs(buffers) do
+            if vim.api.nvim_get_option_value('modified', { buf = idx }) then
+                line = line .. '*'
+                break
+            end
+        end
+    end
+
+    return line
+end
+
 return {
     DeleteTrailingWS = deleteTrailingWS,
     RemoveDirectories = removeDirectories,
     WordCount = wordCount,
+    TabLine = tabLine,
 }

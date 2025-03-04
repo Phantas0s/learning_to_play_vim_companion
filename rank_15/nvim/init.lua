@@ -109,17 +109,16 @@ vim.keymap.set('i', '<c-n>', '<cmd>set relativenumber!<cr>')
 -----------------
 -- {{{
 
-vim.api.nvim_create_autocmd({ 'BufEnter' }, {
-    callback = function()
-        vim.o.statusline = table.concat {
-            '%r',
-            ' %t',
-            ' %m',
-            ' Buf %n',
-            customFunc.WordCount(),
-        }
-    end
-})
+-- v:lua allow us to access lua globals in Vimscript
+vim.o.statusline = table.concat {
+    '%r',
+    ' %t',
+    ' %m',
+    ' Buf %n',
+    '%{v:lua.require("functions").WordCount()}',
+}
+
+vim.o.tabline='%!v:lua.require("functions").TabLine()'
 
 -- }}}
 

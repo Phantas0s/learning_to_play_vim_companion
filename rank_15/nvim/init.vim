@@ -110,6 +110,8 @@ let &statusline.=' %m'                             "Modified Flag
 let &statusline.=' Buf %n'                         "Buffer Number
 let &statusline.=' %{customFunc.WordCount()}'      "Word count
 
+set tabline=%!customFunc.TabLine()
+
 " }}}
 
 """""""""""

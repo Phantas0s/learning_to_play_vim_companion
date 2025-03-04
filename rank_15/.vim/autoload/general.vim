@@ -27,7 +27,11 @@ function general#WordCount() abort
     return wordcount()['words'] .. ' words'
 endfunction
 
-function! general#TabLine()
+function general#TabLine()
+    " We assume we use a 256 colors terminal here
+    highlight TabLineNum ctermfg=gray ctermbg=black cterm=none
+    highlight TabLineNumSel ctermfg=red ctermbg=black cterm=bold
+
     let s = ''
     " Range through all tab pages open
     for i in range(tabpagenr('$'))
@@ -36,13 +40,14 @@ function! general#TabLine()
         " If not, use another highlight
         if tabIndex == tabpagenr()
             let s .= '%#TabLineNumSel#'
-            let s .= ' ' . tabIndex
         else
             let s .= '%#TabLineNum#'
-            let s .= ' ' . tabIndex
         endif
+
+        let s .= ' ' . tabIndex . ':'
+
         " Loop through each buffer of the tab page
-        let buflist = tabpagebuflist(i + 1)
+        let buflist = tabpagebuflist(tabIndex)
         let bufname = ''
         let bufmodified = ''
         for b in buflist
@@ -57,7 +62,6 @@ function! general#TabLine()
         endfor
         let s .= bufmodified
         let s .= ' ' .. bufname
-        let s .= '%#TabLine#'
     endfor
     return s
 endfunction
