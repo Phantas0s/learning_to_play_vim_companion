@@ -42,7 +42,7 @@ vim.api.nvim_create_user_command(
 
 vim.api.nvim_create_user_command(
     "Scratch",
-    customFunc.Scratch,
+    customfunc.Scratch,
     { nargs = 1, complete = "command" }
 )
 
