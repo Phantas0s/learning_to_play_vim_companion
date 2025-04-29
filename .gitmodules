@@ -1,0 +1,6 @@
+[submodule "rank_17/.vim/pack/external/opt/vim-surround"]
+	path = rank_17/.vim/pack/external/opt/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "rank_17/.vim/pack/external/opt/undotree"]
+	path = rank_17/.vim/pack/external/opt/undotree
+	url = https://github.com/mbbill/undotree

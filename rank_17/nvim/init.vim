@@ -1,22 +1,3 @@
-"""""""""""
-" PLUGINS "
-"""""""""""
-" {{{
-
-" You can install vim-plug by running in your shell:
-"
-" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-"    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-"
-"  Ex command to install the plugins listed here:
-" :PlugUpdate
-
-call plug#begin()
-    Plug 'tpope/vim-surround'
-call plug#end()
-
-" }}}
-
 """""""""""""
 " FUNCTIONS "
 """""""""""""
