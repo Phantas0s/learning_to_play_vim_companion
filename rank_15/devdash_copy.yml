@@ -13,11 +13,10 @@ projects:
           - col:
               size: "4"
               elements:
-              - name: github.table_repositories
+                - name: github.table_repositories
                   options:
                     color: yellow
                     row_limit: 30
-
           - col:
               size: "5"
               elements:

@@ -17,6 +17,10 @@ call plug#end()
 
 " }}}
 
+
+
+
+
 """""""""""""""""
 " USER COMMANDS "
 """""""""""""""""
@@ -26,9 +30,11 @@ command -nargs=+ Mkdir !mkdir -p <args>
 
 command -nargs=+ -complete=dir Rmdir call general#RemoveDirectories(<f-args>)
 
-command Syn call general#Syn()
-
 " }}}
+
+
+
+
 
 """"""""""""""""
 " AUTOCOMMANDS "
@@ -45,6 +51,10 @@ autocmd vimrc BufWrite * call general#DeleteTrailingWS()
 autocmd vimrc BufEnter $MYVIMRC setlocal foldmethod=marker
 
 " }}}
+
+
+
+
 
 """"""""""""
 " MAPPINGS "
@@ -89,6 +99,10 @@ inoremap <c-n> <cmd>set relativenumber!<cr>
 
 " }}}
 
+
+
+
+
 """""""""""""""
 " STATUS LINE "
 """""""""""""""
@@ -103,6 +117,10 @@ let &statusline.=' %{general#WordCount()}'         "Word count
 set tabline=%!general#TabLine()
 
 " }}}
+
+
+
+
 
 """""""""""
 " OPTIONS "

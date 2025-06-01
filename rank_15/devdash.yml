@@ -8,10 +8,10 @@ projects:
         owner: Phantas0s
     widgets:
 - row:
-          - col:
+          - col:    
               size: "4"
               elements:
-              - name: github.table_repositories
+                - name: github.table_repositories
                   options:
                     color: yellow
                     row_limit: 30
