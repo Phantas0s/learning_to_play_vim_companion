@@ -15,4 +15,4 @@ GITHUB_LATEST_VERSION=$(curl -L -s -H 'Accept: application/json' https://github.
 GITHUB_FILE="gocket_${GITHUB_LATEST_VERSION//v/}_$(uname -s)_${ARCH}.tar.gz"
 GITHUB_URL="https://github.com/Phantas0s/gocket/releases/download/${GITHUB_LATEST_VERSION}/${GITHUB_FILE}"
 
-curl -LO "SOME_URL"
+echo "Last version of Gocket: $GITHUB_URL"

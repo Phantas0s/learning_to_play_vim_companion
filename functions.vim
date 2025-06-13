@@ -1,4 +1,4 @@
-function general#Scratch(cmd)
+function Scratch(cmd)
     " save the redirection into a variable
     redir => output
     execute a:cmd

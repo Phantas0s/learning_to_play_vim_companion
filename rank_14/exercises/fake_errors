@@ -1,0 +1,6 @@
+=== (ERROR) internal/pocket.go, line 13: there is an error here
+===== (ERROR) main.go, line 2: What is that?
+======= (INFO) internal/pocket.go, line 36: What an interesting function
+= (WARNING) internal/pocket.go, line 60: Too many websites kill the website
+(NOTICE) internal/pocket.go, line 72: Vim is cool
+==== (WARNING) internal/pocket.go, line 94: Don't panic!
