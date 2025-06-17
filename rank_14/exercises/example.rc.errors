@@ -1,0 +1,25 @@
+error: expected `;`, found keyword `while`
+ --> rank_14/exercises/example.rc:2:19
+  |
+2 |     let number = 2
+  |                   ^ help: add `;` here
+3 |     while number <= 10 {
+  |     ----- unexpected token
+
+error[E0384]: cannot assign twice to immutable variable `number`
+ --> rank_14/exercises/example.rc:5:10
+  |
+2 |     let number = 2
+  |         ------ first assignment to `number`
+...
+5 |          number += 1;
+  |          ^^^^^^^^^^^ cannot assign twice to immutable variable
+  |
+help: consider making this binding mutable
+  |
+2 |     let mut number = 2
+  |         +++
+
+error: aborting due to 2 previous errors
+
+For more information about this error, try `rustc --explain E0384`.

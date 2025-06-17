@@ -1,0 +1,6 @@
+|| [ERROR] internal/pocket.go line 36,
+|| column 41: This is an error on multiple line,
+|| but it's only one error at the end.
+|| [WARNING] internal/pocket.go line 24,
+|| column 4: This is a great warning
+|| on multiple lines

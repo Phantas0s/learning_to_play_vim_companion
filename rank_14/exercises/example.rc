@@ -1,0 +1,7 @@
+fn main() {
+    let number = 2
+    while number <= 10 {
+         println!("The value is {number}");
+         number += 1;
+    }
+}

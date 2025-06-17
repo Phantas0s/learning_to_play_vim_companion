@@ -1,0 +1,7 @@
+|| === main.go ===
+|| Line 03, Go error: there is an error here, I swear!
+|| Line 10, Go warning: be careful here
+
+|| ======= internal/pocket.go =======
+|| Line 23, Go notice: Go is great, isn't it?
+|| Line 41, Go info: This is the answer to everything
