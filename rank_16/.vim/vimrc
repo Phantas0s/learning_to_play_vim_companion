@@ -22,13 +22,13 @@ call plug#end()
 """""""""""""""""
 " {{{
 
-command -nargs=+ Mkdir !mkdir -p <args>
+command! -nargs=+ Mkdir !mkdir -p <args>
 
-command -nargs=+ -complete=dir Rmdir call general#RemoveDirectories(<f-args>)
+command! -nargs=+ -complete=dir Rmdir call general#RemoveDirectories(<f-args>)
 
-command Syn call general#Syn()
+command! -nargs=1 Scratch silent call general#Scratch(<q-args>)
 
-command -nargs=1 Scratch silent call general#Scratch(<q-args>)
+command! Inspect call general#Syn()
 
 " }}}
 

@@ -16,5 +16,5 @@ setlocal foldexpr=s:FoldTab(v:lnum)
 " Mapping to create a struct tag
 nnoremap <buffer> <leader>t ^yiWA<space>`json:"<c-r>""`<esc>guaW
 
-command -buffer -nargs=1 GoDevDocs call system('xdg-open https://devdocs.io/go#q=<args>')
+command! -buffer -nargs=1 GoDevDocs call system('xdg-open https://devdocs.io/go#q=<args>')
 let &l:keywordprg=':GoDevDocs'

@@ -25,12 +25,12 @@ let customFunc = luaeval('require("functions")')
 " USER COMMANDS "
 """""""""""""""""
 
-command -nargs=+ -complete=dir Mkdir !mkdir -p <args>
+command! -nargs=+ -complete=dir Mkdir !mkdir -p <args>
 
 " The Lua function expect a table with key "fargs"
 " which has itself a table as value with each argument.
 " See :help lua-guide-commands-create
-command -nargs=+ -complete=dir Rmdir call customFunc.RemoveDirectories({'fargs': split(<q-args>)})
+command! -nargs=+ -complete=dir Rmdir call customFunc.RemoveDirectories({'fargs': split(<q-args>)})
 
 """"""""""""""""
 " AUTOCOMMANDS "

@@ -33,9 +33,9 @@ source $HOME/.vim/functions.vim
 
 " {{{
 
-command -nargs=+ Mkdir !mkdir -p <args>
+command! -nargs=+ Mkdir !mkdir -p <args>
 
-command -nargs=+ -complete=dir Rmdir call RemoveDirectories(<f-args>)
+command! -nargs=+ -complete=dir Rmdir call RemoveDirectories(<f-args>)
 
 " }}}
 

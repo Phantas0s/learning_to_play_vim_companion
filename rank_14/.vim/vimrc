@@ -22,9 +22,9 @@ call plug#end()
 """""""""""""""""
 " {{{
 
-command -nargs=+ Mkdir !mkdir -p <args>
+command! -nargs=+ Mkdir !mkdir -p <args>
 
-command -nargs=+ -complete=dir Rmdir call general#RemoveDirectories(<f-args>)
+command! -nargs=+ -complete=dir Rmdir call general#RemoveDirectories(<f-args>)
 
 " }}}
 
