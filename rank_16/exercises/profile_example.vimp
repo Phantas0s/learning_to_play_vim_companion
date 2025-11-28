@@ -1,4 +1,4 @@
-SCRIPT  /root/book/learning_to_play_vim_companion/rank_16/exercises/vimrc
+SCRIPT  /home/user/learning_to_play_vim_companion/rank_16/exercises/vimrc
 Sourced 1 time
 Total time:   0.005974333
  Self time:   0.005974333
@@ -8,40 +8,40 @@ count     total (s)      self (s)
                             " USER COMMANDS "
                             """""""""""""""""
                             " {{{
-                            
+
     1              0.000005632 command! -nargs=+ Mkdir !mkdir -p <args>
-                            
+
                             " }}}
-                            
+
                             """"""""""""""""
                             " AUTOCOMMANDS "
                             """"""""""""""""
                             " {{{
-                            
+
                             " Autocommand group deleting all its autocommands each time this file is sourced.
     1              0.000001219 augroup vimrc
     1              0.000001631     autocmd!
     1              0.000000400 augroup END
-                            
+
     1              0.000005229 autocmd vimrc BufEnter $MYVIMRC setlocal foldmethod=marker
-                            
+
                             " }}}
-                            
+
                             """"""""""""
                             " MAPPINGS "
                             """"""""""""
                             " {{{
-                            
+
     1              0.000002835 nmap <space> <nop>
     1              0.000016616 let mapleader = "\<space>"
     1              0.000001194 let maplocalleader = "\<space>"
-                            
+
                             " Disable the arrow keys (use hjkl instead, respectively)
     1              0.000001053 nmap <left> <nop>
     1              0.000000746 nmap <down> <nop>
     1              0.000000719 nmap <up> <nop>
     1              0.000000740 nmap <right> <nop>
-                            
+
                             " Create a new tab
     1              0.000001328 nnoremap <leader>t <cmd>tabnew<cr>
                             " Move to the next buffer
@@ -50,79 +50,79 @@ count     total (s)      self (s)
     1              0.000000992 nnoremap <leader>nt gt
                             " Delete the current buffer without closing the current window
     1              0.000001402 nnoremap <leader>dd <cmd>bprevious <bar> bdelete! #<cr>
-                            
+
                             " Y behave conceptually like D or C
     1              0.000001216 nnoremap Y y$
                             " Open the vimrc in a new window
     1              0.000001324 nnoremap <f5> <cmd>vsplit $MYVIMRC<cr>
                             " Reload the vimrc directly from Vim
     1              0.000001164 nnoremap <f6> <cmd>source $MYVIMRC<cr>
-                            
+
                             " Move from window to window using CTRL-{direction} instead of CTRL-w {direction}
     1              0.000001085 nnoremap <c-h> <c-w>h
     1              0.000000925 nnoremap <c-j> <c-w>j
     1              0.000000858 nnoremap <c-k> <c-w>k
     1              0.000000849 nnoremap <c-l> <c-w>l
-                            
+
                             " Toggle relative line numbers
     1              0.000001082 nnoremap <c-n> <cmd>set relativenumber!<cr>
     1              0.000001435 inoremap <c-n> <cmd>set relativenumber!<cr>
-                            
+
                             " }}}
-                            
+
                             """""""""""
                             " OPTIONS "
                             """""""""""
                             " {{{
-                            
+
                             " Can copy-paste more easily from and to Vim
     1              0.000004938 set clipboard+=unnamedplus
-                            
+
                             " No compatibility with Vi
     1              0.000051279 set nocompatible
-                            
+
                             " Display absolute line numbers
     1              0.000000762 set number
-                            
+
                             " Enhanced completion in command-line mode
     1              0.000000606 set wildmenu
-                            
+
                             " Syntax highlighting
     1              0.005691544 syntax on
-                            
+
                             " Enable filetype, indentation, plugin
     1              0.000095578 filetype plugin indent on
-                            
+
                             " Always display the status bar
     1              0.000004218 set laststatus=2
-                            
+
                             " Allow hidding buffers
     1              0.000000802 set hidden
-                            
+
                             " Use case insensitive search, except when using uppercases
     1              0.000000583 set ignorecase
     1              0.000000804 set smartcase
-                            
+
                             " Highlight the matches after a search
     1              0.000000753 set hlsearch
-                            
+
                             " Disable the swap file for all buffers
                             " See :help swap-file
     1              0.000001022 set noswapfile
-                            
+
                             " Add directory of the current file "."
                             " Add all directories and sub-directories of the global working directory "**"
     1              0.000001312 set path=.,**,,
-                            
+
     1              0.000002113 let &grepprg='grep -n $*'
                             " If ripgrep is installed, use it for :grep and :grepadd
     1              0.000010879 if executable('rg')
     1              0.000001121     let &grepprg='rg --vimgrep --smart-case $*'
     1              0.000000412 endif
-                            
+
                             " Save undo trees in files
     1              0.000001042 set undofile
     1              0.000000913 set undolevels=10000 " Maximum number of changes that can be undone (default 1000)
-                            
+
                             " }}}
 
