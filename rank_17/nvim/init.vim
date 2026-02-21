@@ -1,3 +1,16 @@
+"""""""""""
+" PLUGINS "
+"""""""""""
+" {{{
+
+if executable("diff")
+    packadd! undotree
+endif
+
+packadd! vim-surround
+
+" }}}
+
 """""""""""""
 " FUNCTIONS "
 """""""""""""
@@ -94,6 +107,15 @@ let &statusline.=' Buf %n'                         "Buffer Number
 let &statusline.=' %{customFunc.WordCount()}'      "Word count
 
 set tabline=%!customFunc.TabLine()
+
+" }}}
+
+"""""""""""""
+" VARIABLES "
+"""""""""""""
+" {{{
+
+execute "let $MYVIMDIR='" .. fnamemodify(expand("$MYVIMRC"), ":p:h") .. "'"
 
 " }}}
 
