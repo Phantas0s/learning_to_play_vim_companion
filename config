@@ -1,0 +1,13 @@
+if !&cp | set cp | endif
+let s:cpo_save=&cpo
+set cpo&vim
+nmap <right> <Nop>
+nmap <left> <Nop>
+let &cpo=s:cpo_save
+unlet s:cpo_save
+set fileencodings=ucs-bom,utf-8,default,latin1
+set ignorecase
+set noloadplugins
+set smartcase
+set noswapfile
+" vim: set ft=vim :
