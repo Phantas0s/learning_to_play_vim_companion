@@ -1,5 +1,5 @@
-Stuff                            Description
--------------------------------  ------------------------------------------------------------------------------
-`r`                              Replace only one character.
-`R`                              Switch to [r]{.mne}eplace mode to replace more than one character.
--------------------------------  ------------------------------------------------------------------------------
+Stuff          Description
+-------------  ---------------------------------
+`r`            Replace the character under the cursor.
+`R`            Switch to replace mode.
+-------------  ---------------------------------
