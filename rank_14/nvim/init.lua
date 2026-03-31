@@ -98,9 +98,22 @@ vim.keymap.set('n', '<c-j>', '<c-w>j')
 vim.keymap.set('n', '<c-k>', '<c-w>k')
 vim.keymap.set('n', '<c-l>', '<c-w>l')
 
+-- Overwrite the default mapping dd to never save an empty line in any register
+vim.keymap.set('n', 'dd', function()
+    return #vim.fn.getline('.') == 0 and '"_dd' or 'dd'
+end, { expr = true })
+
 -- Toggle relative line numbers
 vim.keymap.set('n', '<c-n>', '<cmd>set relativenumber!<cr>')
 vim.keymap.set('i', '<c-n>', '<cmd>set relativenumber!<cr>')
+
+-- Define a text-object for square brackets
+vim.keymap.set('o', 'ir', 'i[')
+vim.keymap.set('o', 'ar', 'a[')
+
+-- Define a text object for slashes
+vim.keymap.set('o', 'i/', ':<c-u>normal! T/vt/<cr>')
+vim.keymap.set('x', 'i/', ':<c-u>normal! T/vt/<cr>')
 
 -- }}}
 

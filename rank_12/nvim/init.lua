@@ -83,6 +83,11 @@ vim.keymap.set('n', '<c-l>', '<c-w>l')
 vim.keymap.set('n', '<c-n>', '<cmd>set relativenumber!<cr>')
 vim.keymap.set('i', '<c-n>', '<cmd>set relativenumber!<cr>')
 
+-- Overwrite the default mapping dd to never save an empty line in any register
+vim.keymap.set('n', 'dd', function()
+    return #vim.fn.getline('.') == 0 and '"_dd' or 'dd'
+end, { expr = true })
+
 -- Define a text-object for square brackets
 vim.keymap.set('o', 'ir', 'i[')
 vim.keymap.set('o', 'ar', 'a[')

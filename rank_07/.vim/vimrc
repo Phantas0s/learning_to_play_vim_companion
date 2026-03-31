@@ -50,6 +50,9 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
+" Overwrite the default mapping dd to never save an empty line in any register
+nnoremap <expr> dd len(getline('.')) == 0 ? '"_dd' : 'dd'
+
 """""""""""
 " OPTIONS "
 """""""""""

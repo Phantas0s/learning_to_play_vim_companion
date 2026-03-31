@@ -92,9 +92,20 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
+" Overwrite the default mapping dd to never save an empty line in any register
+nnoremap <expr> dd len(getline('.')) == 0 ? '"_dd' : 'dd'
+
 " Toggle relative line numbers
 nnoremap <c-n> <cmd>set relativenumber!<cr>
 inoremap <c-n> <cmd>set relativenumber!<cr>
+
+" Define a text-object for square brackets
+onoremap ir i[
+onoremap ar a[
+
+" Define a text object for slashes
+onoremap i/ :<c-u>normal! T/vt/<cr>
+xnoremap i/ :<c-u>normal! T/vt/<cr>
 
 " }}}
 

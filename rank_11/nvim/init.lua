@@ -79,6 +79,11 @@ vim.keymap.set('n', '<c-j>', '<c-w>j')
 vim.keymap.set('n', '<c-k>', '<c-w>k')
 vim.keymap.set('n', '<c-l>', '<c-w>l')
 
+-- Overwrite the default mapping dd to never save an empty line in any register
+vim.keymap.set('n', 'dd', function()
+    return #vim.fn.getline('.') == 0 and '"_dd' or 'dd'
+end, { expr = true })
+
 -- Toggle relative line numbers
 vim.keymap.set('n', '<c-n>', '<cmd>set relativenumber!<cr>')
 vim.keymap.set('i', '<c-n>', '<cmd>set relativenumber!<cr>')
