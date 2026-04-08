@@ -1,4 +1,4 @@
-// The project is structured as follow:
+// The project is structured as follows:
 
 // main.go (this file) - entry point
 // pocket.go - interface to pocket third party API
