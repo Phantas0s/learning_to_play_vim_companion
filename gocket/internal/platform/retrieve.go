@@ -74,7 +74,7 @@ func (r *RetrieveResult) UnmarshalJSON(data []byte) error {
 
 	switch v := d["list"].(type) {
 	case []interface{}:
-		if len(v) == 0 {
+		if len(v) == 0 {                       
 			r.List = nil
 		}
 	case map[string]interface{}:
