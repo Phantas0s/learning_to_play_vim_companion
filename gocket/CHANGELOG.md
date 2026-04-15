@@ -20,7 +20,7 @@
 ### Added
 
 * commands `gocket list` and `gocket list archive`
-* command `gocket add` - Read from stdin when no arguments given
+* command `gocket add` - Read from stdin when no argument given
 * possible to configure gocket using environment variables
 
 ## [0.1.0] - 2021-03-07
