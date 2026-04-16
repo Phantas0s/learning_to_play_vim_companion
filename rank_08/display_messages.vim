@@ -1,4 +1,5 @@
 function DisplayMessages(...) abort
+    " Loop through all arguments
     for mes in a:000
         echom mes
     endfor
