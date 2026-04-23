@@ -1,9 +1,6 @@
-Here's an unsorted list
+Here's a list:
 
 1. Read your Pocket goodies from your comfy shell
-4. Search through your Pocket list
-6. This line shouldn't be here
+4. This line shouldn't be here
+3. Use a TUI or pipe the URLs; but you shouldn't do that anyway
 2. Archive or delete multiple entries easily
-3. Use a TUI or pipe the URLs to any CLI tool
-5. Works on Linux, macOS (not tested), and Windows (not tested)
-7. This line shouldn't be here either
