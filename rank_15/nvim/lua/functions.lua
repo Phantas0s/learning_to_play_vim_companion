@@ -8,7 +8,7 @@ end
 
 local function removeDirectories(table)
     for _, arg in ipairs(table.fargs) do
-        local choice = vim.fn.confirm("Remove directory '" .. arg .. "'?", "&Yes\n&No")
+        local choice = vim.fn.confirm(string.format("Remove directories '%s'?", arg), "Yes\nNo")
         if choice == 1 then
             vim.fn.delete(arg, 'rf')
         end

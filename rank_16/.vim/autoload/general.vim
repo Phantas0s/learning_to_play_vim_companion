@@ -6,7 +6,7 @@ endfunc
 
 function general#RemoveDirectories(...)
     for arg in a:000
-        let choice = confirm("Remove directory '" .. arg .. "'?", "&Yes\n&No")
+        let choice = confirm(printf("Remove directories '%s'?", arg), "&Yes\n&No")
         if choice == 1
             call delete(arg, "rf")
         endif
