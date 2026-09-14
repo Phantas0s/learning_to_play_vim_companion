@@ -17,8 +17,6 @@ augroup vimrc
     autocmd!
 augroup END
 
-autocmd vimrc BufEnter $MYVIMRC setlocal foldmethod=marker
-
 " }}}
 
 """"""""""""

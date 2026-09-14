@@ -4,7 +4,7 @@ setlocal foldmethod=expr
 " Any other function in any other file sourced by Vim could have this function name without conflict.
 function s:FoldTab(lineNr) abort
     let curLine = getline(a:lineNr)
-    if curLine ==? ""
+    if curLine ==# ""
         return '='
     else
         return strlen(matchstr(curLine, '\v^\t*'))

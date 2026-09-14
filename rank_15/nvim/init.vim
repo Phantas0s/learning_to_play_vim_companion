@@ -52,8 +52,6 @@ augroup END
 
 autocmd vimrc BufWrite * call customFunc.DeleteTrailingWS()
 
-autocmd vimrc BufEnter $MYVIMRC setlocal foldmethod=marker
-
 " }}}
 
 """"""""""""
