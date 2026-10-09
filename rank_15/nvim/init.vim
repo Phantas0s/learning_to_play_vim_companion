@@ -113,8 +113,8 @@ xnoremap i/ :<c-u>normal! T/vt/<cr>
 """""""""""""""
 " {{{
 
-let &statusline='%r'                               "Read Only flag
-let &statusline.=' %t'                             "Filename
+let &statusline='%r'                               "Read-only flag
+let &statusline.=' %t'                             "File name
 let &statusline.=' %m'                             "Modified Flag
 let &statusline.=' Buf %n'                         "Buffer Number
 let &statusline.=' %{customFunc.WordCount()}'      "Word count
